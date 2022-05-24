@@ -17,13 +17,10 @@ def func_rand():
     #randomize the values in tuple
     ran_rps = random.choice(rps)  
     return ran_rps
-    pas
-    s
+    pass
 
 
-class class_rps:
-
-  
+class class_rps: 
 
     #Conditional parameter for function rock 
     def func_rock():  
