@@ -1,8 +1,7 @@
 #Practice Python: Rock, Paper, Scissors 
 
 
-import string 
-import random
+import string, random, sys
 
 
 rock = "rock"
@@ -24,13 +23,15 @@ class class_rps:
     scissors = "scissors"
     rps = ("rock", "paper", "scissors")
     #rps_dic = {1: "rock", 2: "paper", 3: "scissors"}
-    end_program = "Sho'Nuff is the Master"
+    end_program = "Sho\'Nuff is the Master"
 
 
      #unnecessary but defining constructor in class good stucture
     def __init__(self, rock, paper, scissors, rps):
         return super().__init__(rock, paper, scissors, rps)
-        
+
+   
+    @staticmethod    
     def func_rand():
         #randomize the values in tuple
         rand_rps = random.choice(class_rps.rps) 
@@ -77,11 +78,12 @@ class class_rps:
             raise Exception("The Gods are Angry.\n")
         pass
 
-
-
+    def func_done():
+        sys.exit
+        pass
     
-f_rps = 'fin'
-while f_rps != class_rps.rps:
+
+while True:
     #User Input
     u_rps = input("Rock, Paper, Scissors say shoot: ")
     l_rps = u_rps.lower()
@@ -95,8 +97,8 @@ while f_rps != class_rps.rps:
     elif u_rps != class_rps.rps:
         print("Please type rock, paper, or scissors")
         print("To quit type \"Sho'Nuff is the Master\"\n")
-    elif u_rps == class_rps.end_program:
-        sys.exit()
+    elif u_rps == 1: #class_rps.end_program:
+        class_rps.func_done
     else:   
         raise Exception("The Gods are Angry.\n")
     
