@@ -23,7 +23,7 @@ class class_rps:
     scissors = "scissors"
     rps = ("rock", "paper", "scissors")
     #rps_dic = {1: "rock", 2: "paper", 3: "scissors"}
-    end_program = "Sho\'Nuff is the Master"
+    end_program = "Sho'Nuff is the Master"
 
 
      #unnecessary but defining constructor in class good stucture
@@ -38,7 +38,7 @@ class class_rps:
         return rand_rps
         pass
 
-    #Conditional parameter for function rock 
+    #Conditional parameter excute function rock 
     def func_rock(rand_rps):
         print(rand_rps.title())
         if rand_rps == class_rps.rock:
@@ -49,10 +49,10 @@ class class_rps:
             print("Rock breaks scissors, you win.\n")
         else:
             raise Exception("The Gods are Angry.\n")
-        pass
+        
 
 
-    #Conditional parameter for function paper 
+    #Conditional parameter excute function paper 
     def func_paper(rand_rps): 
         print(rand_rps.title())
         if rand_rps == class_rps.paper:
@@ -63,9 +63,9 @@ class class_rps:
             print("Paper covers rock, you win.\n") #redun
         else:
             raise Exception("The Gods are Angry.\n")
-        pass
+        
 
-    #Conditional parameter for function paper
+    #Conditional parameter excute function paper
     def func_scissors(rand_rps):
         print(rand_rps.title())
         if rand_rps == class_rps.scissors:
@@ -76,9 +76,10 @@ class class_rps:
             print("Scissors cuts paper, you win.\n") #redun
         else:
             raise Exception("The Gods are Angry.\n")
-        pass
+        
 
     def func_done():
+        print(exit)
         sys.exit
         pass
     
@@ -94,11 +95,12 @@ while True:
         class_rps.func_paper(rand_rps)
     elif l_rps == class_rps.scissors:
         class_rps.func_scissors(rand_rps)
-    elif u_rps != class_rps.rps:
+    elif u_rps == class_rps.end_program:
+        class_rps.func_done()
+        break
+    elif l_rps != class_rps.rps: #class_rps.end_program:
         print("Please type rock, paper, or scissors")
         print("To quit type \"Sho'Nuff is the Master\"\n")
-    elif u_rps == 1: #class_rps.end_program:
-        class_rps.func_done
     else:   
         raise Exception("The Gods are Angry.\n")
     
